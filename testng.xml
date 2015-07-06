@@ -5,39 +5,9 @@
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
-	<test name="TC_PORTAL_01">
+	<test name="TC_MARKETING_01">
 		<classes>
-			<class name="automationFramework.TC_PORTAL_01" />
-		</classes>
-	</test>
-	<test name="TC_PORTAL_02">
-		<classes>
-			<class name="automationFramework.TC_PORTAL_02" />
-		</classes>
-	</test>
-<!-- 	<test name="TC_PORTAL_04">
-		<classes>
-			<class name="automationFramework.TC_PORTAL_04" />
-		</classes>
-	</test> -->
-	<test name="TC_PORTAL_05">
-		<classes>
-			<class name="automationFramework.TC_PORTAL_05" />
-		</classes>
-	</test>
-	<test name="TC_PORTAL_06">
-		<classes>
-			<class name="automationFramework.TC_PORTAL_06" />
-		</classes>
-	</test>
-	<test name="TC_PORTAL_07">
-		<classes>
-			<class name="automationFramework.TC_PORTAL_07" />
-		</classes>
-	</test>
-	<test name="TC_PORTAL_08">
-		<classes>
-			<class name="automationFramework.TC_PORTAL_08" />
+			<class name="automationFramework.TC_MARKETING_01" />
 		</classes>
 	</test>
 </suite>
