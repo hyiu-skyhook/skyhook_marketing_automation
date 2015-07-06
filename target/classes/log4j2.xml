@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE RelativeLayout>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<!-- <PatternLayout pattern="%highlight{%d %5p %x (%F:%L) - %m%n}" /> -->
+			<!-- <PatternLayout pattern="%d %5p %x (%F:%L) - %m%n" /> -->
+			<PatternLayout pattern="%d %5p %x (%F:%L) %M - %msg%xEx%n" />
+
+		</Console>
+
+		<RandomAccessFile name="LogFile" fileName="logs/all.log"
+			immediateFlush="false" append="true">
+			<PatternLayout pattern="%d %5p %x (%F:%L) %M - %msg%xEx%n" />
+		</RandomAccessFile>
+	</Appenders>
+	<Loggers>
+		<Root level="TRACE">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="LogFile" />
+		</Root>
+	</Loggers>
+</Configuration>

@@ -1,0 +1,3 @@
+This is an attachment.
+
+It should be attached to a support case.
