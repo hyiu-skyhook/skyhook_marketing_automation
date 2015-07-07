@@ -1,4 +1,4 @@
-package com.skyhookwireless.myskyhook.pageObjects;
+package com.skyhookwireless.skyhook.pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -135,19 +135,6 @@ public class PublicSupportPage extends AbstractPageObject {
     }
     
     
-    
-    /**
-     * Allows the user to click the continue button. If
-     * expecting failure use {@link #clickContinueExpectingFailure()}
-     * @return Case details form page
-     * @see #clickContinueExpectingFailure()
-     */
-    public CaseFormPage clickContinue() {
-	continueButton.click();
-	log.info("Continue button clicked");
-	return PageFactory.initElements(driver, CaseFormPage.class);
-    }
-    
     /**
      * Allows the user to click the continue button with the
      * expectation of failure
@@ -159,26 +146,6 @@ public class PublicSupportPage extends AbstractPageObject {
 	return this;
     }
 
-    /**
-     * Allows the user to enter an email and name and to start writing a case.
-     * If you expect a failure use
-     * {@link #startCaseExpectingFailure(String, String)}.
-     * 
-     * @param email
-     *            String representing an email address
-     * @param name
-     *            String representing a name
-     * @return Case details form page
-     * @see #startCaseExpectingFailure(String, String)
-     */
-    public CaseFormPage startCase(String email, String firstName, String lastName) {
-	typeEmail(email);
-	typeFirstName(firstName);
-	typeLastName(lastName);
-	continueButton.click();
-	log.info(String.format("Case started, email: %s name: %s %s", email, firstName, lastName));
-	return PageFactory.initElements(driver, CaseFormPage.class);
-    }
 
     /**
      * Allows the user to enter an email and name that should fail. This method
@@ -200,29 +167,7 @@ public class PublicSupportPage extends AbstractPageObject {
 	return this;
     }
 
-    /**
-     * Allows the user to click the log in link on the public support page
-     * 
-     * @return Login Page
-     */
-    public LoginPage clickLogin() {
-	pageContainer.findElement(By.linkText("log in")).click();
-	log.info("Log in link clicked");
-	return PageFactory.initElements(driver, LoginPage.class);
-    }
 
-    /**
-     * Allows the user to click the 'Create new account' link after they have
-     * successfully submitted a support case
-     * 
-     * @return Signup Page
-     */
-    public SignUpPage clickCreateNewAccount() {
-	pageContainer.findElement(By.linkText("Create a new account")).click();
-	log.info("Create new account link clicked");
-	return PageFactory.initElements(driver, SignUpPage.class);
-    }
-    
     /**
      * Allows the user to click the 'Open a new support case' page
      * @return	New instance of the public support page

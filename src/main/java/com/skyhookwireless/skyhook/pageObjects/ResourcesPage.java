@@ -1,11 +1,11 @@
-package com.skyhookwireless.myskyhook.pageObjects;
+package com.skyhookwireless.skyhook.pageObjects;
 
 import org.testng.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import com.skyhookwireless.myskyhook.pageObjects.resourcePages.*;
+import com.skyhookwireless.skyhook.pageObjects.resourcePages.*;
 
 /**
  * ResourcesPage is a page object used to model the user interface of the
@@ -32,7 +32,7 @@ public class ResourcesPage extends AbstractPageObject {
 	super(driver);
 
 	// Assert title.
-	Assert.assertEquals(driver.getTitle(), properties.getProperty("resources.title"));
+	Assert.assertEquals(driver.getTitle(), properties.getProperty("landing.title"));
 
     }
 

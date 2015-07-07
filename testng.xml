@@ -8,6 +8,7 @@
 	<test name="TC_MARKETING_01">
 		<classes>
 			<class name="automationFramework.TC_MARKETING_01" />
+			<class name="src.test.java.automationFramework.TC_MARKETING_01"
 		</classes>
 	</test>
 </suite>

@@ -1,4 +1,4 @@
-package com.skyhookwireless.myskyhook.pageObjects;
+package com.skyhookwireless.skyhook.pageObjects;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
