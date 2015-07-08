@@ -18,7 +18,6 @@ public class ProductsPage extends AbstractPageObject {
 	// Logging
 	protected final Logger log = LogManager.getLogger(getClass().toString());
 	
-	private WebDriver driver;
 	
 	/* Web Elements */
 	@FindBy(linkText="Context Accelerator")

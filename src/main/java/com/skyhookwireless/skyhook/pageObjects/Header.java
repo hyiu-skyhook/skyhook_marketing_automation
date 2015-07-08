@@ -68,7 +68,6 @@ public class Header {
      */
     public LandingPage clickLogo() {
 	driver.findElement(By.linkText("Logo")).click();
-	//http://www.skyhookwireless.com
 	log.info("Logo clicked");
 	return PageFactory.initElements(this.driver, LandingPage.class);
     }
