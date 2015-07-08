@@ -1,11 +1,13 @@
 package com.skyhookwireless.skyhook.pageObjects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -183,4 +185,15 @@ public class Footer {
     	return PageFactory.initElements(this.driver, SpeakWithUsPage.class);
     }
 	
+	public String[] getSocialIcons() {
+		String[] iconArray = new String[4];
+		List<WebElement> wbList = new ArrayList<WebElement>();
+		wbList = footerBlock.findElements(By.xpath(
+				"//div[@class='footer-social']/div/a"));
+		iconArray[0]= wbList.get(0).getAttribute("href");
+		iconArray[1]= wbList.get(1).getAttribute("href");
+		iconArray[2]= wbList.get(2).getAttribute("href");
+		iconArray[3]= wbList.get(3).getAttribute("href");
+		return iconArray;
+	}
 }

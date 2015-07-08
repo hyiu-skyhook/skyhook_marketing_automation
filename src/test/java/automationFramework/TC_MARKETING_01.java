@@ -2,10 +2,7 @@ package automationFramework;
 
 import java.io.IOException;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -140,6 +137,28 @@ public class TC_MARKETING_01 extends AbstractTestCase {
 	Assert.assertEquals("https://www.facebook.com/Skyhook", iconsLink[1]);
 	Assert.assertEquals("https://www.linkedin.com/company/skyhook-wireless", iconsLink[2]);
 	Assert.assertEquals("http://www.skyhookwireless.com/#", iconsLink[3]);
+    }
+    
+    @Test(description = "Test the side icons of landing page for skyhookwireless.com", enabled = true)
+    public void testLandingPage_FooterIcons() throws IOException {
+
+	log.entry();
+
+	// Open the login page
+	driver.get(root);
+
+	// Initialize Page.
+	this.landingPage = PageFactory.initElements(driver, LandingPage.class);
+	
+	// Click the logo in the header
+	landingPage = landingPage.header.clickLogo();
+	
+	String[] iconsLink = landingPage.footer.getSocialIcons();
+	
+	Assert.assertEquals("https://twitter.com/Skyhook", iconsLink[0]);
+	Assert.assertEquals("https://www.facebook.com/Skyhook", iconsLink[1]);
+	Assert.assertEquals("http://www.linkedin.com/company/skyhook-wireless", iconsLink[2]);
+	Assert.assertEquals("http://blog.skyhookwireless.com/", iconsLink[3]);
     }
     
     @Test(description = "Test the side icons of landing page for skyhookwireless.com", enabled = true)
