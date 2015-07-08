@@ -190,10 +190,21 @@ public class Footer {
 		List<WebElement> wbList = new ArrayList<WebElement>();
 		wbList = footerBlock.findElements(By.xpath(
 				"//div[@class='footer-social']/div/a"));
-		iconArray[0]= wbList.get(0).getAttribute("href");
-		iconArray[1]= wbList.get(1).getAttribute("href");
-		iconArray[2]= wbList.get(2).getAttribute("href");
-		iconArray[3]= wbList.get(3).getAttribute("href");
+		for (int i=0; i < 4; i++) {
+			iconArray[i] = wbList.get(i).getAttribute("href");
+		}
 		return iconArray;
 	}
+	
+	public String getLinkText_WebsitePrivacy() {
+		return footerBlock.findElement(By.cssSelector(
+				"#hs_cos_wrapper_footer_v4 > div > div.footer-copyright.clearfix > div > p > a")).getAttribute("href");
+	}
+	
+	public String getLinkText_Truste() {
+		return footerBlock.findElement(By.cssSelector(
+				"#hs_cos_wrapper_footer_v4 > div > div.footer-copyright.clearfix > div > div > a")).getAttribute("href");
+	}
+	
+	
 }

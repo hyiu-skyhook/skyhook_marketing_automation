@@ -133,13 +133,13 @@ public class TC_MARKETING_01 extends AbstractTestCase {
 	
 	String[] iconsLink = landingPage.getRibbonIcons();
 	
-	Assert.assertEquals("https://twitter.com/skyhook", iconsLink[0]);
-	Assert.assertEquals("https://www.facebook.com/Skyhook", iconsLink[1]);
-	Assert.assertEquals("https://www.linkedin.com/company/skyhook-wireless", iconsLink[2]);
-	Assert.assertEquals("http://www.skyhookwireless.com/#", iconsLink[3]);
+	Assert.assertEquals( iconsLink[0], "https://twitter.com/skyhook");
+	Assert.assertEquals( iconsLink[1], "https://www.facebook.com/Skyhook");
+	Assert.assertEquals( iconsLink[2], "https://www.linkedin.com/company/skyhook-wireless");
+	Assert.assertEquals( iconsLink[3], "http://www.skyhookwireless.com/#");
     }
     
-    @Test(description = "Test the side icons of landing page for skyhookwireless.com", enabled = true)
+    @Test(description = "Test the footer icons for skyhookwireless.com", enabled = true)
     public void testLandingPage_FooterIcons() throws IOException {
 
 	log.entry();
@@ -159,9 +159,29 @@ public class TC_MARKETING_01 extends AbstractTestCase {
 	Assert.assertEquals("https://www.facebook.com/Skyhook", iconsLink[1]);
 	Assert.assertEquals("http://www.linkedin.com/company/skyhook-wireless", iconsLink[2]);
 	Assert.assertEquals("http://blog.skyhookwireless.com/", iconsLink[3]);
+	
+	
     }
     
-    @Test(description = "Test the side icons of landing page for skyhookwireless.com", enabled = true)
+    @Test(description = "Test the truste portion of the footer for skyhookwireless.com", enabled = true)
+    public void testLandingPage_Truste() throws IOException {
+
+	log.entry();
+
+	// Open the login page
+	driver.get(root);
+
+	// Initialize Page.
+	this.landingPage = PageFactory.initElements(driver, LandingPage.class);
+	
+	// Click the logo in the header
+	landingPage = landingPage.header.clickLogo();
+	
+	Assert.assertEquals(landingPage.footer.getLinkText_WebsitePrivacy(), "http://www.skyhookwireless.com/privacy-policy/website-and-my-skyhook");
+	Assert.assertEquals(landingPage.footer.getLinkText_Truste(), "http://privacy.truste.com/privacy-seal/Skyhook-Wireless,-Inc-/validation?rid=49be9087-8afc-4b36-9b10-054df6d51b22");
+    }
+    
+    @Test(description = "Test the footer of landing page for skyhookwireless.com", enabled = true)
     public void testLandingPage_Footer() throws IOException {
 
 	log.entry();
@@ -227,5 +247,7 @@ public class TC_MARKETING_01 extends AbstractTestCase {
 	landingPage = swuPage.header.clickLogo();
 	
     }
+    
+    
     
     }
